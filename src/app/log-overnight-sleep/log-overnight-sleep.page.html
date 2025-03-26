@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Log Overnight Sleep</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <img class="cloud"
+    src="https://static.vecteezy.com/system/resources/previews/013/180/817/non_2x/in-the-sky-watercolor-free-png.png"
+    width="100">
+
+  <app-datetime (sleepTimeSelected)="onSleepTimeSelected($event)"
+    (wakeTimeSelected)="onWakeTimeSelected($event)"></app-datetime>
+
+  <h3>Total sleep time: {{ totalSleepTime }}</h3>
+
+  <div *ngIf="errorMessage" class="error-message">
+    <ion-text color="danger">{{ errorMessage }}</ion-text>
+  </div>
+
+
+  <div *ngIf="successMessage" class="success-message">
+    <ion-text color="success">{{ successMessage }}</ion-text>
+  </div>
+
+  <ion-button class='save' expand="block" (click)="saveSleepLog()">Save</ion-button>
+
+  <img
+    src="https://static.vecteezy.com/system/resources/thumbnails/011/908/281/small_2x/sleeping-bear-watercolor-png.png"
+    width="300">
+</ion-content>

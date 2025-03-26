@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="home-headers">
+  <h1>Hey there, sleepyhead!</h1>
+  <h3>Ready to log your sleep?</h3>
+  <h4>{{todaysDate}}</h4>
+  <ion-card class="last-nights-sleep" *ngIf="latestSleepLog; else noSleepLog">
+    <ion-card-header>
+      <ion-card-title>Last Night's Sleep</ion-card-title>
+      <ion-card-subtitle>
+        <ion-icon name="moon"></ion-icon>
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p *ngIf="latestSleepLog">Date: {{ latestSleepLog.dateString() }}</p>
+      <p *ngIf="!latestSleepLog">No sleep log available.</p>
+      <p>Duration: {{ latestSleepLog.summaryString() }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ng-template #noSleepLog>
+    <ion-card class="last-nights-sleep">
+      <ion-card-header>
+        <ion-card-title>Last Night's Sleep</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>No sleep log available for last night.</p>
+      </ion-card-content>
+    </ion-card>
+  </ng-template>
+
+  <ion-card class="sleepiness-log">
+    <ion-card-header>
+      <ion-card-title>Today's Sleepiness Log</ion-card-title>
+      <ion-card-subtitle>most recent entry:</ion-card-subtitle>
+    </ion-card-header>
+    <div class="sleepcard">
+      <p>{{mostRecent?.loggedAt | date:'short'}}</p>
+      <p>{{mostRecent?.summaryString()}}</p>
+      <p *ngIf="!mostRecent">No sleepiness logs available.</p>
+    </div>
+  </ion-card>
+</ion-content>

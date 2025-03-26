@@ -1,0 +1,45 @@
+ion-datetime-button {
+    margin: 10px 0;
+    z-index: 9999;
+}
+  
+ion-modal {
+    --width: auto;
+    --height: auto;
+}
+
+h3 {
+    text-align: center;
+}
+
+ion-button {
+    width: 15%;
+    display: block;
+    margin: auto;
+    --border-radius: 12px;
+    --background: #221E2C;
+    --background-activated: #19171d;
+    --background-hover: #140a2e;
+    --color: white;
+    --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+}
+
+.error-message, .success-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    margin: 20px 0;
+}
+
+img {
+    display: block;
+    margin: auto;
+    margin-top: 52px;
+}
+
+.cloud {
+    margin-top: 4px;
+}

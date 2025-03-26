@@ -1,0 +1,15 @@
+<h3 class="sleep">I went to sleep at...</h3>
+<ion-datetime-button datetime="sleepPicker"></ion-datetime-button>
+<ion-modal [keepContentsMounted]="true">
+  <ng-template>
+    <ion-datetime id="sleepPicker" (ionChange)="onSleepTimeChange($event)" ></ion-datetime>
+  </ng-template>
+</ion-modal>
+
+<h3 class="wake">I woke up at...</h3>
+<ion-datetime-button datetime="wakePicker"></ion-datetime-button>
+<ion-modal [keepContentsMounted]="true">
+  <ng-template>
+    <ion-datetime id="wakePicker" (ionChange)="onWakeTimeChange($event)"></ion-datetime>
+  </ng-template>
+</ion-modal>
